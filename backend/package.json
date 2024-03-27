@@ -8,12 +8,15 @@
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "express-fileupload": "^1.4.3",
+    "insta_clone": "file:..",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.0",
-    "nodemon": "^3.0.3"
+    "nodemon": "^3.0.3",
+    "path": "^0.12.7"
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build": "npm install && npm install --prefix ../client && npm run build --prefix ../client"
   }
 }
