@@ -35,7 +35,7 @@ export default function Profie() {
   };
   useEffect(() => {
     async function fetchPosts() {
-      const data = await axios.get(`http://localhost:5000/api/user/profile`,{
+      const data = await axios.get(`https://socialmedia-wvkr.onrender.com/api/user/profile`,{
         headers: {
           authorization: 'Bearer ' + JSON.parse(localStorage.getItem('userData')).data.token,
         }

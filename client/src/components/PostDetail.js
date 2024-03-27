@@ -13,7 +13,7 @@ export default function PostDetail({ item, toggleDetails }) {
 
   const removePost = (postId) => {
     if(window.confirm("Do you really want to remove this post? ")) {
-      const res = axios.delete(`http://localhost:5000/api/post/removepost/${postId}`, {
+      const res = axios.delete(`https://socialmedia-wvkr.onrender.com/api/post/removepost/${postId}`, {
         headers: {
           authorization: `Bearer ${JSON.parse(localStorage.getItem('userData')).data.token}`
         }

@@ -22,7 +22,7 @@ export default function Home() {
       navigate("./signup");
     }
     try {
-      let result = await axios.get("http://localhost:5000/api/post/allPosts", {
+      let result = await axios.get("https://socialmedia-wvkr.onrender.com/api/post/allPosts", {
         headers: {
           Authorization:"Bearer " + token,
         }
@@ -59,7 +59,7 @@ export default function Home() {
       notifyA("Chat id not provided");
     } else {
       try {
-        const { data }  = await axios.put('http://localhost:5000/api/post/like', {_id: id},{
+        const { data }  = await axios.put('https://socialmedia-wvkr.onrender.com/api/post/like', {_id: id},{
           headers: {
             authorization: "Bearer " + token,
           }
@@ -84,7 +84,7 @@ export default function Home() {
       notifyA("Chat id not provided");
     } else {
       try {
-        const { data }  = await axios.put('http://localhost:5000/api/post/unlike', {_id: id},{
+        const { data }  = await axios.put('https://socialmedia-wvkr.onrender.com/api/post/unlike', {_id: id},{
           headers: {
             authorization: "Bearer " + token,
           }
@@ -109,7 +109,7 @@ export default function Home() {
       notifyA("Incomplete data!");
     } else {
       try {
-        const { data } = await axios.put('http://localhost:5000/api/post/comment', {comment, postID}, {
+        const { data } = await axios.put('https://socialmedia-wvkr.onrender.com/api/post/comment', {comment, postID}, {
           headers:{
             authorization: 'Bearer ' + token,
           }

@@ -11,7 +11,7 @@ export default function ProfilePic({ changeprofile, setPic }) {
     const data = new FormData();
     data.append("file", image);
     async function uploadImage() {
-      const res = await axios.put('http://localhost:5000/api/user/uploadProfilePic',data, {
+      const res = await axios.put('https://socialmedia-wvkr.onrender.com/api/user/uploadProfilePic',data, {
         headers: {
           authorization: `Bearer ${JSON.parse(localStorage.getItem("userData")).data.token}`
         }

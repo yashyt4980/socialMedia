@@ -25,7 +25,7 @@ export default function UserProfile() {
   // to follow user
   const followUser = (userId) => {
     try {
-      const data = axios.put('http://localhost:5000/api/user/followUser', {_id:userId}, {
+      const data = axios.put('https://socialmedia-wvkr.onrender.com/api/user/followUser', {_id:userId}, {
         headers: {
           authorization: `Bearer ${JSON.parse(localStorage.getItem("userData")).data.token}`
         }
@@ -51,7 +51,7 @@ export default function UserProfile() {
   // to unfollow user
   const unfollowUser = (userId) => {
     try {
-      const data = axios.put('http://localhost:5000/api/user/unfollowUser', {_id:userId}, {
+      const data = axios.put('https://socialmedia-wvkr.onrender.com/api/user/unfollowUser', {_id:userId}, {
         headers: {
           authorization: `Bearer ${JSON.parse(localStorage.getItem("userData")).data.token}`
         }
@@ -102,7 +102,7 @@ export default function UserProfile() {
 
   async function fetch() {
     try {
-      const data = await axios.get(`http://localhost:5000/api/user/profile/${userid}`, {
+      const data = await axios.get(`https://socialmedia-wvkr.onrender.com/api/user/profile/${userid}`, {
         headers: {
           authorization: "Bearer " + JSON.parse(localStorage.getItem("userData")).data.token,
         },

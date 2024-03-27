@@ -41,7 +41,7 @@ export default function Createpost() {
                 authorization: `Bearer ${JSON.parse(localStorage.getItem('userData')).data.token}`,
             },
         };
-        const { data } = await axios.post("http://localhost:5000/api/post/createPost", {...out}, config);
+        const { data } = await axios.post("https://socialmedia-wvkr.onrender.com/api/post/createPost", {...out}, config);
             if(data && data.success === true) {
                 notifyB("Posted Successfully");
             } else {
@@ -57,7 +57,7 @@ export default function Createpost() {
     var formData = new FormData();
     formData.append('file', postData.pic);
     try {
-        let { data } = await axios.post('http://localhost:5000/api/post/uploadPostPic',formData, {headers: {
+        let { data } = await axios.post('https://socialmedia-wvkr.onrender.com/api/post/uploadPostPic',formData, {headers: {
             'Content-Type': 'multipart/form-data',
             authorization: `Bearer ${JSON.parse(localStorage.getItem('userData')).data.token}`
         }});
