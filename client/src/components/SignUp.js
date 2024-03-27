@@ -31,7 +31,7 @@ export default function SignUp() {
 
     // Sending data to server
     try {
-      const data = await axios.post('https://socialmedia-wvkr.onrender.com//api/user/register', {
+      const data = await axios.post('https://socialmedia-wvkr.onrender.com/api/user/register', {
         email,
         password,
         userName,
