@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const { protect } = require('../middlewares/authMiddleware');
+const { loginController, signupController, fetchUserPosts, saveUserPic, showProfile, followUser, unfollowUser } = require('../controllers/userControllers');
+router.post('/login', loginController);
+router.post('/register', signupController);
+router.route('/profile').get(protect, fetchUserPosts);
+router.route('/profile/:id').get(protect, showProfile);
+router.route('/uploadProfilePic').put(protect, saveUserPic);
+router.route('/followUser').put(protect,followUser);
+router.route('/unfollowUser').put(protect, unfollowUser);
+module.exports = router;

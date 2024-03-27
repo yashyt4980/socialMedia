@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const { protect } = require('../middlewares/authMiddleware');
+const { createPost, fetchAllPosts, likePost, unLikePost, postComment, savePic, removePost } = require('../controllers/postControllers');
+router.route('/allPosts').get(protect, fetchAllPosts);
+router.route('/createPost').post(protect, createPost);
+router.route('/like').put(protect, likePost);
+router.route('/unlike').put(protect, unLikePost);
+router.route('/comment').put(protect, postComment);
+router.route('/uploadpostpic').post(protect, savePic);
+router.route('/removepost/:id').delete(protect,removePost);
+module.exports = router;
