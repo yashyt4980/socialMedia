@@ -29,7 +29,7 @@ export default function SignIn() {
     }
     // Sending data to server
     try {
-      const data = await axios.post("http://localhost:5000/api/user/login", {
+      const data = await axios.post("https://socialmedia-wvkr.onrender.com/api/user/login", {
         email,
         password,
       })
